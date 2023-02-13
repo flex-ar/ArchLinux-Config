@@ -1,0 +1,14 @@
+font:
+  normal:
+    family: Hermit
+    style: Regular
+  bold:
+    family: Hermit
+    style: Bold
+  italic:
+    family: Hermit
+    style: RegularItalic
+  bold_italic:
+    family: Hermit
+    style: BoldItalic
+  size: 13

@@ -1,0 +1,18 @@
+/*
+
+# Files:
+!.gitignore
+!README.md
+!starship.toml
+
+# Folders:
+!alacritty/
+!bat/
+!fish/
+!fontconfig/
+!htop/
+!neofetch/
+!nvim/
+!picom/
+!qtile/
+!rofi/

@@ -1,0 +1,5 @@
+__pycache__/
+config.json
+settings/__init__.py
+settings/__pycache__/
+themes/README.md
