@@ -10,7 +10,7 @@ def base(fg='text', bg='dark'):
 def separator():
     return widget.Sep(**base(), linewidth=0, padding=5)
 
-def icon(fg='text', bg='dark', fontsize=17, text="?"):
+def icon(fg='text', bg='dark', fontsize=19, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
@@ -22,13 +22,12 @@ def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
         text="\ue0ca",
-        fontsize=27,
+        fontsize=30,
         padding=0
     )
 
 def workspaces(): 
     return [
-        separator(),
         widget.GroupBox(
             **base(fg='light'),
             font='Fira Code',
@@ -40,7 +39,7 @@ def workspaces():
             borderwidth=1,
             active=colors['active'],
             inactive=colors['inactive'],
-            rounded=False,
+            rounded=True,
             highlight_method='block',
             urgent_alert_method='block',
             urgent_border=colors['urgent'],
@@ -50,70 +49,81 @@ def workspaces():
             other_screen_border=colors['dark'],
             disable_drag=True
         ),
-        separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
-        separator(),
+    ]
+
+def updates():
+    return [
+        powerline('color6', 'dark'),
+        icon(bg="color6", text='\uf019'), # Icon: fa-download
+        widget.CheckUpdates(
+            background=colors['color6'],
+            colour_have_updates=colors['text'],
+            colour_no_updates=colors['text'],
+            no_update_string='0',
+            display_format='{updates}',
+            update_interval=1800,
+            custom_command='checkupdates',
+            padding=5
+        ),
+    ]
+
+def volume():
+    return [
+        powerline('color5', 'color6'),
+        icon(bg="color5", text='\uf028'), # Icon: fa-volume-high
+        widget.PulseVolume(
+            **base(bg='color5'),
+            volume_app="pavucontrol",
+            padding=5
+        ),
+    ]
+
+def memory():
+    return [
+        powerline('color4', 'color5'),
+        icon(bg="color4", text='\uf538'), # Icon: fa-memory
+        widget.Memory(
+            **base(bg='color4'),
+            format='{MemUsed: .0f}{mm} ',
+            padding=5
+        ),
+    ]
+
+def disk():
+    return [
+        powerline('color3', 'color4'),
+        icon(bg="color3", text='\uf0a0'), # Icon: fa-hard-drive
+        widget.DF(
+            **base(bg='color3'),
+            format='{f}GB ',
+            partition='/',
+            visible_on_warn=False,
+            padding=5
+        ),
+    ]
+
+def layout():
+    return [
+        powerline('color2', 'color3'),
+        widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    ]
+
+def clock():
+    return [
+        powerline('color1', 'color2'),
+        icon(bg="color1", text='\uf073'), # Icon: fa-calendar-days
+        widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
     ]
 
 primary_widgets = [
     *workspaces(),
-
-    separator(),
-
-    # 7
-    powerline('dark', 'dark'),
-    widget.Systray(background=colors['dark'], padding=5),
-
-    # 6
-    powerline('color6', 'dark'),
-    icon(bg="color6", text='\uf019'), # Icon: fa-download
-    widget.CheckUpdates(
-        background=colors['color6'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
-        no_update_string='0',
-        display_format='{updates}',
-        # distro='Arch_checkupdates',
-        update_interval=1800,
-        custom_command='checkupdates',
-        padding=5
-    ),
-
-    # 5
-    powerline('color5', 'color6'),
-    icon(bg="color5", text='\uf028'), # Icon: fa-volume-high
-    widget.PulseVolume(
-        **base(bg='color5'),
-        volume_app="pavucontrol",
-        fmt='{}',
-        padding=5
-    ),
-
-    # 4
-    powerline('color4', 'color5'),
-    icon(bg="color4", text='\uf538'), # Icon: fa-memory
-    widget.Memory(**base(bg='color4'), fmt='{}', padding=5),
-
-    # 3
-    powerline('color3', 'color4'),
-    icon(bg="color3", text='\uf012'), # Icon: fa-signal
-    widget.Net(
-        **base(bg='color3'),
-        interface='enp4s0',
-        format='{down} ↓↑ {up}',
-        padding=5
-    ),
-
-    # 2
-    powerline('color2', 'color3'),
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
-
-    # 1
-    powerline('color1', 'color2'),
-    icon(bg="color1", text='\uf017'), # Icon: fa-clock
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
-
+    widget.Spacer(background=colors['dark']),
+    *updates(),
+    *volume(),
+    *memory(),
+    *disk(),
+    *layout(),
+    *clock(),
 ]
 
 secondary_widgets = [
