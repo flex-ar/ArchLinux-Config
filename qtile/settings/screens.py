@@ -13,9 +13,9 @@ def status_bar(widgets):
         size=30,
         background=colors['dark'],
         border_color=colors['dark'],
-        border_width=4,
+        border_width=6,
         margin=[8,8,0,8],
-        opacity=1,
+        opacity=0.9,
     )
 
 screens = [Screen(top=status_bar(primary_widgets))]

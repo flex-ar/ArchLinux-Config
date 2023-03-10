@@ -27,16 +27,17 @@ from .keys import mod, keys
 # nf-seti-haskell,
 # nf-mdi-layers
 
-groups = [Group(i) for i in [
-    " 1 ", 
-    " 2 ", 
-    " 3 ", 
-    " 4 ", 
-    " 5 ",
-    " 6 ", 
-    " 7 ", 
-    " 8 ", 
-    " 9 ",
+# Icon: fa-circle-small
+groups = [Group(name=name, label=label) for [name, label] in [
+    ["1", "  "],
+    ["2", "  "],
+    ["3", "  "],
+    ["4", "  "],
+    ["5", "  "],
+    ["6", "  "],
+    ["7", "  "],
+    ["8", "  "],
+    ["9", "  "],
 ]]
 
 for i, group in enumerate(groups):
