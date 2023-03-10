@@ -67,25 +67,25 @@ def disk():
             visible_on_warn=False,
             padding=padding
         ),
-        powerline(fg='color2', bg='color6', mirrored=False),
+        powerline(fg='color2', bg='color3', mirrored=False),
     ]
 
 def volume():
     return [
-        icon(bg='color6', text='\uf028'), # Icon: fa-volume-high
+        icon(bg='color3', text='\uf028'), # Icon: fa-volume-high
         widget.PulseVolume(
-            **base(bg='color6'),
+            **base(bg='color3'),
             volume_app="pavucontrol",
             padding=padding
         ),
-        powerline(fg='color6', bg='color5', mirrored=False),
+        powerline(fg='color3', bg='color4', mirrored=False),
     ]
 
 def updates():
     return [
-        icon(bg='color5', text='\uf019'), # Icon: fa-download
+        icon(bg='color4', text='\uf019'), # Icon: fa-download
         widget.CheckUpdates(
-            background=colors['color5'],
+            background=colors['color4'],
             colour_have_updates=colors['text'],
             colour_no_updates=colors['text'],
             no_update_string='0',
@@ -94,7 +94,7 @@ def updates():
             custom_command='checkupdates',
             padding=padding
         ),
-        powerline(fg='color5', mirrored=False),
+        powerline(fg='color4', mirrored=False),
     ]
 
 def workspaces(): 
@@ -142,11 +142,20 @@ def cpu():
 
 def clock():
     return [
-        powerline(fg='color1', bg='color3'),
-        icon(bg='color1', text='\uf017'), # Icon: fa-clock
+        powerline(fg='color2', bg='color3'),
+        icon(bg='color2', text='\uf017'), # Icon: fa-clock
+        widget.Clock(
+            **base(bg='color2'),
+            format='%H:%M'
+        ),
+    ]
+
+def date():
+    return [
+        powerline(fg='color1', bg='color2'),
         widget.Clock(
             **base(bg='color1'),
-            format='%H:%M - %A %d/%m/%Y '
+            format=' %A %d/%m/%Y '
         ),
     ]
 
@@ -166,6 +175,7 @@ primary_widgets = [
     *ram(),
     *cpu(),
     *clock(),
+    *date(),
 ]
 
 secondary_widgets = [
