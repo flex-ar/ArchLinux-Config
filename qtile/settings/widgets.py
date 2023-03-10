@@ -54,7 +54,20 @@ def divider():
 def layout():
     return [
         widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-        powerline(fg='color1', bg='color6', mirrored=False),
+        powerline(fg='color1', bg='color2', mirrored=False),
+    ]
+
+def disk():
+    return [
+        icon(bg='color2', text='\uf0a0'), # Icon: fa-hard-drive
+        widget.DF(
+            **base(bg='color2'),
+            format='{f}GB',
+            partition='/',
+            visible_on_warn=False,
+            padding=padding
+        ),
+        powerline(fg='color2', bg='color6', mirrored=False),
     ]
 
 def volume():
@@ -116,26 +129,12 @@ def ram():
         ),
     ]
 
-def disk():
-    return [
-        powerline(fg='color3', bg='color4'),
-        icon(bg='color3', text='\uf0a0'), # Icon: fa-hard-drive
-        widget.DF(
-            **base(bg='color3'),
-            format='{f}GB',
-            partition='/',
-            visible_on_warn=False,
-            padding=padding
-        ),
-    ]
-
-
 def cpu():
     return [
-        powerline(fg='color2', bg='color3'),
-        icon(bg='color2', text='\uf2db'), # Icon: fa-microchip
+        powerline(fg='color3', bg='color4'),
+        icon(bg='color3', text='\uf2db'), # Icon: fa-microchip
         widget.CPU(
-            **base(bg='color2'),
+            **base(bg='color3'),
             format='{load_percent:.0f}%',
             padding=padding
         ),
@@ -143,7 +142,7 @@ def cpu():
 
 def clock():
     return [
-        powerline(fg='color1', bg='color2'),
+        powerline(fg='color1', bg='color3'),
         icon(bg='color1', text='\uf017'), # Icon: fa-clock
         widget.Clock(
             **base(bg='color1'),
@@ -154,16 +153,17 @@ def clock():
 
 primary_widgets = [
     *layout(),
+    *disk(),
     *volume(),
     *updates(),
+
+    widget.Spacer(),
     *divider(),
     *workspaces(),
     *divider(),
-
-    widget.Spacer(background=colors['dark']),
+    widget.Spacer(),
 
     *ram(),
-    *disk(),
     *cpu(),
     *clock(),
 ]
