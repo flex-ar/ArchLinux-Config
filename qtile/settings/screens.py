@@ -11,8 +11,8 @@ def status_bar(widgets):
     return bar.Bar(
         widgets,
         size=30,
-        background=colors['dark'],
-        border_color=colors['dark'],
+        background=colors['bg'],
+        border_color=colors['bg'],
         border_width=6,
         margin=[8,8,0,8],
         opacity=0.9,

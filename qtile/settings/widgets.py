@@ -14,7 +14,7 @@ fontsize = {
 
 padding = 8
 
-def base(fg='text', bg='dark'): 
+def base(fg='text', bg='bg'):
     return {
         'foreground': colors[fg],
         'background': colors[bg]
@@ -23,7 +23,7 @@ def base(fg='text', bg='dark'):
 def separator(width=5):
     return widget.Sep(**base(), linewidth=width)
 
-def icon(bg='dark', fg='text', text='?', fontwidth='regular'):
+def icon(bg='bg', fg='text', text='?', fontwidth='regular'):
     return widget.TextBox(
         **base(fg, bg),
         font=font[fontwidth],
@@ -32,7 +32,7 @@ def icon(bg='dark', fg='text', text='?', fontwidth='regular'):
         padding=padding
     )
 
-def powerline(fg='light', bg='dark', mirrored=True):
+def powerline(fg='light', bg='bg', mirrored=True):
     return widget.TextBox(
         **base(fg, bg),
         text='\ue0ca' if mirrored else '\ue0c8',
@@ -53,39 +53,39 @@ def divider():
 
 def layout():
     return [
-        widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-        powerline(fg='color1', bg='color2', mirrored=False),
+        widget.CurrentLayoutIcon(**base(bg='red'), scale=0.65),
+        powerline(fg='red', bg='green', mirrored=False),
     ]
 
 def disk():
     return [
-        icon(bg='color2', text='\uf0a0'), # Icon: fa-hard-drive
+        icon(bg='green', text='\uf0a0'), # Icon: fa-hard-drive
         widget.DF(
-            **base(bg='color2'),
+            **base(bg='green'),
             format='{f}GB',
             partition='/',
             visible_on_warn=False,
             padding=padding
         ),
-        powerline(fg='color2', bg='color3', mirrored=False),
+        powerline(fg='green', bg='yellow', mirrored=False),
     ]
 
 def volume():
     return [
-        icon(bg='color3', text='\uf028'), # Icon: fa-volume-high
+        icon(bg='yellow', text='\uf028'), # Icon: fa-volume-high
         widget.PulseVolume(
-            **base(bg='color3'),
+            **base(bg='yellow'),
             volume_app="pavucontrol",
             padding=padding
         ),
-        powerline(fg='color3', bg='color4', mirrored=False),
+        powerline(fg='yellow', bg='blue', mirrored=False),
     ]
 
 def updates():
     return [
-        icon(bg='color4', text='\uf019'), # Icon: fa-download
+        icon(bg='blue', text='\uf019'), # Icon: fa-download
         widget.CheckUpdates(
-            background=colors['color4'],
+            background=colors['blue'],
             colour_have_updates=colors['text'],
             colour_no_updates=colors['text'],
             no_update_string='0',
@@ -94,7 +94,7 @@ def updates():
             custom_command='checkupdates',
             padding=padding
         ),
-        powerline(fg='color4', mirrored=False),
+        powerline(fg='blue', mirrored=False),
     ]
 
 def workspaces(): 
@@ -107,23 +107,23 @@ def workspaces():
             active=colors['active'],
             inactive=colors['inactive'],
             highlight_method='text',
-            highlight_color=[colors['dark'], colors['dark']],
+            highlight_color=[colors['bg'], colors['bg']],
             urgent_alert_method='block',
             urgent_border=colors['urgent'],
             this_current_screen_border=colors['focus'],
             this_screen_border=colors['grey'],
-            other_current_screen_border=colors['dark'],
-            other_screen_border=colors['dark'],
+            other_current_screen_border=colors['bg'],
+            other_screen_border=colors['bg'],
             disable_drag=True
         ),
     ]
 
 def ram():
     return [
-        powerline(fg='color4'),
-        icon(bg='color4', text='\uf538'), # Icon: fa-memory
+        powerline(fg='blue'),
+        icon(bg='blue', text='\uf538'), # Icon: fa-memory
         widget.Memory(
-            **base(bg='color4'),
+            **base(bg='blue'),
             format='{MemUsed:.0f}{mm}',
             padding=padding
         ),
@@ -131,10 +131,10 @@ def ram():
 
 def cpu():
     return [
-        powerline(fg='color3', bg='color4'),
-        icon(bg='color3', text='\uf2db'), # Icon: fa-microchip
+        powerline(fg='yellow', bg='blue'),
+        icon(bg='yellow', text='\uf2db'), # Icon: fa-microchip
         widget.CPU(
-            **base(bg='color3'),
+            **base(bg='yellow'),
             format='{load_percent:.0f}%',
             padding=padding
         ),
@@ -142,19 +142,19 @@ def cpu():
 
 def clock():
     return [
-        powerline(fg='color2', bg='color3'),
-        icon(bg='color2', text='\uf017'), # Icon: fa-clock
+        powerline(fg='green', bg='yellow'),
+        icon(bg='green', text='\uf017'), # Icon: fa-clock
         widget.Clock(
-            **base(bg='color2'),
+            **base(bg='green'),
             format='%H:%M'
         ),
     ]
 
 def date():
     return [
-        powerline(fg='color1', bg='color2'),
+        powerline(fg='red', bg='green'),
         widget.Clock(
-            **base(bg='color1'),
+            **base(bg='red'),
             format=' %A %d/%m/%Y '
         ),
     ]
@@ -181,9 +181,9 @@ primary_widgets = [
 secondary_widgets = [
     *workspaces(),
     separator(),
-    powerline('color1', 'dark'),
-    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-    widget.CurrentLayout(**base(bg='color1'), padding=padding),
+    powerline(fg='red', bg='bg'),
+    widget.CurrentLayoutIcon(**base(bg='red'), scale=0.65),
+    widget.CurrentLayout(**base(bg='red'), padding=padding),
     *clock(),
 ]
 
