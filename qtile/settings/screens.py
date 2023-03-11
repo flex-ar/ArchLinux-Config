@@ -15,7 +15,7 @@ def status_bar(widgets):
         border_color=colors['bg'],
         border_width=6,
         margin=[8,8,0,8],
-        opacity=0.9,
+        opacity=0.95,
     )
 
 screens = [Screen(top=status_bar(primary_widgets))]

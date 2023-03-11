@@ -6,7 +6,8 @@ from .theme import colors
 
 layout_conf = {
     'border_focus': colors['focus'],
-    'border_width': 1,
+    'border_normal': colors['bg'],
+    'border_width': 2,
     'margin': 8
 }
 
@@ -35,5 +36,7 @@ floating_layout = layout.Floating(
         Match(title='branchdialog'),
         Match(title='pinentry'),
     ],
-    border_focus=colors['cyan']
+    border_focus=colors['cyan'],
+    border_normal=colors['bg'],
+    border_width=2,
 )

@@ -1,6 +1,6 @@
 {
     "$schema": "./theme-schema.json",
-    "dark": "#0f101a",
+    "bg": "#0f101a",
     "grey": "#37383b",
     "light": "#f1ffff",
     "text": "#f1ffff",
@@ -8,10 +8,10 @@
     "active": "#f1ffff",
     "inactive": "#4c566a",
     "urgent": "#3f575b",
-    "color1": "#0f101a",
-    "color2": "#334148",
-    "color3": "#3f575b",
-    "color4": "#556a74",
-    "color5": "#0f101a",
-    "color6": "#334148"
+    "red": "#0f101a",
+    "green": "#334148",
+    "yellow": "#3f575b",
+    "blue": "#556a74",
+    "magenta": "#0f101a",
+    "cyan": "#334148"
 }
