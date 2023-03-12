@@ -5,15 +5,16 @@ from .theme import colors
 # Layouts and layout rules
 
 layout_conf = {
-    'border_focus': colors['focus'][0],
-    'border_width': 1,
-    'margin': 4
+    'border_focus': colors['focus'],
+    'border_normal': colors['bg'],
+    'border_width': 2,
+    'margin': 8
 }
 
 layouts = [
     layout.MonadTall(**layout_conf),
     layout.MonadWide(**layout_conf),
-    layout.Max(),
+    layout.Max(margin=8),
     # layout.Spiral(**layout_conf),
     # layout.Bsp(**layout_conf),
     # layout.Matrix(columns=2, **layout_conf),
@@ -35,5 +36,7 @@ floating_layout = layout.Floating(
         Match(title='branchdialog'),
         Match(title='pinentry'),
     ],
-    border_focus=colors["color4"][0]
+    border_focus=colors['cyan'],
+    border_normal=colors['bg'],
+    border_width=2,
 )

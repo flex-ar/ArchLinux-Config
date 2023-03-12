@@ -1,58 +1,17 @@
 {
-    "dark": [
-        "#1f1d29",
-        "#1f1d29"
-    ],
-    "grey": [
-        "#ABB2BF",
-        "#ABB2BF"
-    ],
-    "light": [
-        "#ffffff",
-        "#ffffff"
-    ],
-    "text": [
-        "#1f1d29",
-        "#1f1d29"
-    ],
-    "focus": [
-        "#eabbb9",
-        "#eabbb9"
-    ],
-    "active": [
-        "#f1ffff",
-        "#f1ffff"
-    ],
-    "inactive": [
-        "#4c566a",
-        "#4c566a"
-    ],
-    "urgent": [
-        "#ea6f91",
-        "#ea6f91"
-    ],
-    "color1": [
-        "#ebbcba",
-        "#ebbcba"
-    ],
-    "color2": [
-        "#f6c177",
-        "#f6c177"
-    ],
-    "color3": [
-        "#9ccfd8",
-        "#9ccfd8"
-    ],
-    "color4": [
-        "#eb6f92",
-        "#eb6f92"
-    ],
-    "color5": [
-        "#c4a7e7",
-        "#c4a7e7"
-    ],
-    "color6": [
-        "#31748f",
-        "#31748f"
-    ]
+    "$schema": "./theme-schema.json",
+    "bg": "#191724",
+    "grey": "#524f67",
+    "light": "#e0def4",
+    "text": "#191724",
+    "focus": "#c4a7e7",
+    "active": "#ebbcba",
+    "inactive": "#6e6a86",
+    "urgent": "#eb6f92",
+    "red": "#eb6f92",
+    "green": "#31748f",
+    "yellow": "#f6c177",
+    "blue": "#9ccfd8",
+    "magenta": "#c4a7e7",
+    "cyan": "#ebbcba"
 }

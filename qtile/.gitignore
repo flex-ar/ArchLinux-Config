@@ -4,3 +4,4 @@ config.json
 settings/__init__.py
 settings/__pycache__/
 themes/README.md
+themes/theme-schema.json
