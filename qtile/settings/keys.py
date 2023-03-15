@@ -54,9 +54,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Browser
     ([mod], "b", lazy.spawn("google-chrome-stable")),
 
-    # File Explorer
-    # ([mod], "e", lazy.spawn("pcmanfm")),
-
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),
 
@@ -65,11 +62,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Pause", lazy.spawn("redshift -x")),
 
     # Screenshot
-    # ([], "Print", lazy.spawn("scrot; mv *.png ~/Pictures/screenshots/")),
     ([], "Print", lazy.spawn("scrot")),
-    (["control"], "Print", lazy.spawn("scrot -s")),
-    # Note: In some window managers (dwmAUR, xmonad and possibly others) scrot -s does not work properly when running via window 
-    # manager's keyboard shortcut, this can be worked around by prepending scrot invocation with a short pause sleep 0.2; scrot -s.
+    (["control"], "Print", lazy.spawn("maim -s captura.png")),
 
     # ------------ Hardware Configs ------------
 
@@ -96,8 +90,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     (["control"], "F9", lazy.spawn(
         "pactl set-sink-mute 0 toggle"
     )),
-
-    # @DEFAULT_SINK@
 
     # Multimedia
     ([], "XF86AudioPlay", lazy.spawn(
