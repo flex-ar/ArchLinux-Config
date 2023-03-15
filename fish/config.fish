@@ -1,7 +1,10 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
   starship init fish | source
 end
+
+# Theme
+source ~/.config/fish/theme.fish
 
 # Aliases
 alias ls "exa --icons -h -F"

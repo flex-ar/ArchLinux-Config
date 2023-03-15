@@ -1,0 +1,45 @@
+# Dracula Color Palette
+
+# Syntax Highlighting Colors
+fish_color_normal f8f8f2 #white
+fish_color_command --bold ff79c6 #magenta
+fish_color_keyword ff79c6 #magenta
+fish_color_quote f1fa8c #yellow
+fish_color_redirection --bold f8f8f2 #white
+fish_color_end ff5555 #red
+fish_color_error ff0000
+fish_color_param 8be9fd #cyan
+fish_color_valid_path --underline ffb86c #orange
+fish_color_option 50fa7b #green
+fish_color_comment 6272a4 #grey
+fish_color_selection --background=44475a #greydark
+fish_color_operator bd93f9 #blue
+fish_color_escape ff79c6 #magenta
+fish_color_autosuggestion 6272a4 #grey
+
+fish_color_status ff5555
+fish_color_cancel ff5555 --reverse
+fish_color_search_match --background=50fa7b
+
+# Default Prompt Colors
+fish_color_cwd 50fa7b
+fish_color_cwd_root red
+fish_color_user 8be9fd
+fish_color_host bd93f9
+fish_color_host_remote bd93f9
+
+# Completion Pager Colors
+fish_pager_color_progress 6272a4
+fish_pager_color_background
+fish_pager_color_prefix 8be9fd
+fish_pager_color_completion f8f8f2
+fish_pager_color_description 6272a4
+fish_pager_color_selected_background --background=44475a
+fish_pager_color_selected_prefix 8be9fd
+fish_pager_color_selected_completion f8f8f2
+fish_pager_color_selected_description 6272a4
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix 8be9fd
+fish_pager_color_secondary_completion f8f8f2
+fish_pager_color_secondary_description 6272a4
+

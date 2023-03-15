@@ -1,0 +1,45 @@
+# Rose pine
+
+# Syntax Highlighting Colors
+fish_color_normal e0def4
+fish_color_command --bold 31748f
+fish_color_keyword f6c177
+fish_color_quote f6c177
+fish_color_redirection ebbcba
+fish_color_end ebbcba
+fish_color_error eb6f92 --bold
+fish_color_param e0def4
+fish_color_valid_path --underline
+fish_color_option ebbcba
+fish_color_comment c4a7e7
+fish_color_selection --background=524f67
+fish_color_operator f6c177
+fish_color_escape f6c177
+fish_color_autosuggestion 6e6a86
+
+fish_color_status eb6f92
+fish_color_cancel --reverse
+fish_color_search_match --background=f6c177
+
+# Default Prompt Colors
+fish_color_cwd 31748f
+fish_color_cwd_root red
+fish_color_host 524f67
+fish_color_host_remote f6c177
+fish_color_user c4a7e7
+
+# Completion Pager Colors
+fish_pager_color_progress --background=1f1d2e
+fish_pager_color_background
+fish_pager_color_prefix 9ccfd8
+fish_pager_color_completion e0def4
+fish_pager_color_description f6c177 --dim
+fish_pager_color_selected_background --background=e0def4
+fish_pager_color_selected_prefix 9ccfd8
+fish_pager_color_selected_completion 191724
+fish_pager_color_selected_description f6c177
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix 9ccfd8
+fish_pager_color_secondary_completion e0def4
+fish_pager_color_secondary_description f6c177
+

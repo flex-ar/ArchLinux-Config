@@ -1,0 +1,29 @@
+# TokyoNight Night
+
+# Syntax Highlighting Colors
+fish_color_normal c0caf5 #white
+fish_color_command --bold 0db9d7 #cyan fuerte
+fish_color_keyword bb9af7 #magenta
+fish_color_quote 9ece6a #green
+fish_color_redirection --bold 7aa2f7 #blue
+fish_color_end f7768e #red
+fish_color_error de5971 #red fuerte
+fish_color_param e0af68 #yellow
+fish_color_valid_path --underline 73daca #green v2
+fish_color_option bb9af7 #magenta
+fish_color_comment 565f89 #grey
+fish_color_selection --background=33468c
+fish_color_operator ff9e64 #orange
+fish_color_escape 7dcfff #cyan
+fish_color_autosuggestion 565f89 #grey
+
+fish_color_search_match --background=33468c
+
+# Completion Pager Colors
+fish_pager_color_progress 565f89
+fish_pager_color_background
+fish_pager_color_prefix 7dcfff
+fish_pager_color_completion c0caf5
+fish_pager_color_description 565f89
+fish_pager_color_selected_background --background=33468c
+
