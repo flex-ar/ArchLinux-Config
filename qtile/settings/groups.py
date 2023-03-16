@@ -4,29 +4,6 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import mod, keys
 
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
-# Icons 1: 
-# nf-fa-firefox, 
-# nf-fae-python, 
-# nf-dev-terminal, 
-# nf-fa-code, 
-# nf-oct-git_merge, 
-# nf-linux-docker,
-# nf-mdi-folder,
-# nf-mdi-image,
-# nf-mdi-layers
-
-# Icons 2:
-# nf-dev-terminal,
-# nf-fa-chrome,
-# nf-dev-javascript_badge,
-# nf-mdi-nodejs,
-# nf-mdi-react,
-# nf-mdi-language_typescript,
-# nf-linux-archlinux,
-# nf-seti-haskell,
-# nf-mdi-layers
-
 # Icon: fa-circle-small
 groups = [Group(name=name, label=label) for [name, label] in [
     ["1", "  "],
