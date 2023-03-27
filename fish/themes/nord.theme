@@ -1,0 +1,21 @@
+# Nord
+
+# Syntax Highlighting Colors
+fish_color_normal d8dee9 #white
+fish_color_command --bold 88c0d0 #cyan
+fish_color_keyword 81a1c1 #blue
+fish_color_quote a3be8c #green
+fish_color_redirection --bold 81a1c1 #blue
+fish_color_end bf616a #red
+fish_color_error ff0000
+fish_color_param d8dee9 #white
+fish_color_valid_path --underline d8dee9 #white
+fish_color_option 8fbcbb #bright cyan
+fish_color_comment 616e88 #grey
+fish_color_selection d8dee9 #white
+fish_color_operator b48ead #magenta
+fish_color_escape ebcb8b #yellow
+fish_color_autosuggestion 616e88 #grey
+
+fish_color_search_match bf616a #red
+
